@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: rest-api_production
-  username: rest-api
+  username: cody
   password: <%= ENV['REST-API_DATABASE_PASSWORD'] %>
