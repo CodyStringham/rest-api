@@ -1,8 +1,7 @@
 rest-api
 ========
 
-Time to get into the gnar
-
+This is a simple rest-api that has two models: User and Dream. A dream belongs to a user, and a user has many dreams.
 
 #### Making a Call
 ```bash
