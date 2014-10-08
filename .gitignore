@@ -1,4 +1,4 @@
-*.rbc
+touch*.rbc
 capybara-*.html
 .rspec
 /log
