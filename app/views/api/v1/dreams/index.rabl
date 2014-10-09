@@ -1,3 +1,3 @@
 collection @dreams => :dreams
 
-extends 'api/dreams/show'
+extends 'api/v1/dreams/show'

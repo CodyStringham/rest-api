@@ -1,3 +1,3 @@
 collection @users => :users
 
-extends 'api/users/show'
+extends 'api/v1/users/show'
