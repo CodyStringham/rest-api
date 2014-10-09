@@ -10,11 +10,12 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 
-gem 'rabl'  # API builder
-gem 'oj'    # JSON parser
+gem 'rabl'      # API builder
+gem 'oj'        # JSON parser
+gem 'httparty'  # Makes http requests incredibly easy
 
-gem 'jbuilder' # used for serialization of models into JSON
-gem 'kaminari' # adds pagination to ActiveModels
+gem 'jbuilder'  # used for serialization of models into JSON
+gem 'kaminari'  # adds pagination to ActiveModels
 
 gem 'sdoc', '~> 0.4.0',          group: :doc
 

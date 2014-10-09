@@ -2,21 +2,38 @@ rest-api
 ========
 
 Welcome to my API homework app. Built upon this amazing [RESTful API blog post](https://codelation.com/blog/rails-restful-api-just-add-water).
-_______________
+
 ####Models
 ```ruby
 User :name, :age, :city, :state
 Dream :date, :category, :description, :user_id
 ```
-_______________
+
 ####Views
 `views/api/dreams` & `views/api/users` contain a index and show (currently jbuilder)
-_______________
+
 ####Controllers
 `controllers/api/base_controller` contains most logic, see private method comments
-_______________
-####cURL Post
-```bash
-curl -H "Content-Type: application/json" -d '{"user":{"name":"Bobby","age":"42","city":"West Jordan","state":"UT"}}' http://rest-api.dev/api/users
+
+
+Lets make a call!
+--------
+#### HTTParty Get
+```ruby
+HTTParty.get 'http://rest-api.dev/api/v1/users.json'
 ```
-`-H` lets you pass in a header to the call, `-d` shorthand for `--data` tells curl to do a `POST` request.
+
+#### HTTParty Post
+```ruby
+HTTParty.post('http://rest-api.dev/api/v1/users', body: { user: {name: "Json", age: "22", city: "Plainsville", state: "NV"} })
+```
+
+#### HTTParty Patch
+```ruby
+HTTParty.patch('http://rest-api.dev/api/v1/users/4', body: { user: {name: "Jason"} })
+```
+
+#### HTTParty Delete
+```ruby
+HTTParty.delete 'http://rest-api.dev/api/v1/users/4'
+```
