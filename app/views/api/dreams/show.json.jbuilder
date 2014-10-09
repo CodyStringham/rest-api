@@ -1,9 +1,9 @@
 json.dream do
 
   json.id       dream.id
-  json.name     dream.date
-  json.age      dream.category
-  json.city     dream.description
+  json.date     dream.date
+  json.category      dream.category
+  json.description     dream.description
 
   json.user_id dream.user ? dream.user.id : nil
 
