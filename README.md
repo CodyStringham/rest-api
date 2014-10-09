@@ -19,7 +19,7 @@ Dream :date, :category, :description, :user_id
 
 ####Kaminari Pagination
 Kaminari has a default page size of 25, to override this pass in a `page` or a `page_size` paramater like the following:
-```ruby
+```
 http://rest-api.dev/api/v1/users.json?page=2
 http://rest-api.dev/api/v1/users.json?page_size=50
 ```
