@@ -1,7 +1,19 @@
 rest-api
 ========
 
-This is a simple rest-api that has two models: User and Dream. A dream belongs to a user, and a user has many dreams.
+Welcome to my API homework app.
+_______________
+####Models
+```ruby
+User :name, :age, :city, :state
+Dream :date, :category, :description, :user_id
+```
+_______________
+####Views
+`views/api/dreams` & `views/api/users` contain a index and show (currently jbuilder)
+_______________
+####Controllers
+`controllers/api/base_controller` contains most logic, see private method comments
 _______________
 ####cURL Post
 ```bash
