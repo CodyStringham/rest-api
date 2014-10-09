@@ -1,7 +1,7 @@
 rest-api
 ========
 
-Welcome to my API homework app.
+Welcome to my API homework app. Built upon this amazing [rest-api blog post](https://codelation.com/blog/rails-restful-api-just-add-water).
 _______________
 ####Models
 ```ruby
