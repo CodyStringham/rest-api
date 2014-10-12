@@ -20,13 +20,13 @@ Dream :date, :category, :description, :user_id
 ####Kaminari Pagination
 Kaminari has a default page size of 25, to override this pass in a `page` and/or a `page_size` paramater like the following:
 ```
-http://rest-api.dev/api/v1/dreams.json?page=1&page_size=10
+http://api.rest-api.dev/v1/dreams.json?page=1&page_size=10
 ```
 
 ####Built in query params
 Each controller has permitted query params, by default they are all allowed:
 ```
-http://rest-api.dev/api/v1/dreams.json?user_id=5&category=Nightmare
+http://api.rest-api.dev/v1/dreams.json?user_id=5&category=Nightmare
 ```
 
 
@@ -34,20 +34,20 @@ Lets make a call!
 --------
 #### HTTParty Get
 ```ruby
-HTTParty.get 'http://rest-api.dev/api/v1/users.json'
+HTTParty.get 'http://api.rest-api.dev/v1/users.json'
 ```
 
 #### HTTParty Post
 ```ruby
-HTTParty.post('http://rest-api.dev/api/v1/users', body: { user: {name: "Json", age: "22", city: "Plainsville", state: "NV"} })
+HTTParty.post('http://api.rest-api.dev/v1/users', body: { user: {name: "Json", age: "22", city: "Plainsville", state: "NV"} })
 ```
 
 #### HTTParty Patch
 ```ruby
-HTTParty.patch('http://rest-api.dev/api/v1/users/4', body: { user: {name: "Jason"} })
+HTTParty.patch('http://api.rest-api.dev/v1/users/4', body: { user: {name: "Jason"} })
 ```
 
 #### HTTParty Delete
 ```ruby
-HTTParty.delete 'http://rest-api.dev/api/v1/users/4'
+HTTParty.delete 'http://api.rest-api.dev/v1/users/4'
 ```
