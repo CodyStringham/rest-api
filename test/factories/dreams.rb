@@ -2,9 +2,9 @@
 
 FactoryGirl.define do
   factory :dream do
-    date "2014-10-08 11:27:00"
-    category "MyString"
-    description "MyText"
+    date "#{Time.now}"
+    category "#{['Fantasy', 'Psychic', 'Nightmare'].sample}"
+    description "#{Faker::Lorem.phrase}"
     user nil
   end
 end

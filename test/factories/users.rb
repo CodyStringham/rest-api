@@ -2,9 +2,9 @@
 
 FactoryGirl.define do
   factory :user do
-    name "MyString"
-    age 1
-    city "MyString"
-    state "MyString"
+    name "#{Faker::Name.first_name}"
+    age rand(18..45)
+    city "#{Faker::Address.city}"
+    state "#{Faker::AddressUS.state_abbr}"
   end
 end

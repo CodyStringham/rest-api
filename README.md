@@ -18,10 +18,15 @@ Dream :date, :category, :description, :user_id
 `controllers/api/v1/base_controller` contains the most logic, see private method comments. These will set and get the resource names as needed for each controller.
 
 ####Kaminari Pagination
-Kaminari has a default page size of 25, to override this pass in a `page` or a `page_size` paramater like the following:
+Kaminari has a default page size of 25, to override this pass in a `page` and/or a `page_size` paramater like the following:
 ```
-http://rest-api.dev/api/v1/users.json?page=2
-http://rest-api.dev/api/v1/users.json?page_size=50
+http://rest-api.dev/api/v1/dreams.json?page=1&page_size=10
+```
+
+####Built in query params
+Each controller has permitted query params, by default they are all allowed:
+```
+http://rest-api.dev/api/v1/dreams.json?user_id=5&category=Nightmare
 ```
 
 
