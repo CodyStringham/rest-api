@@ -31,4 +31,16 @@ class ListingUsersTest < ActionDispatch::IntegrationTest
     assert_equal @user1.name, data['users'].first['name']
   end
 
+  test 'returns users in JSON' do
+    get '/v1/users', {}, { accept: Mime::JSON }
+    assert_response :success
+    assert_equal Mime::JSON, response.content_type
+  end
+
+  test 'returns users in XML' do
+    get '/v1/users', {}, { accept: Mime::XML }
+    assert_response :success
+    assert_equal Mime::XML, response.content_type
+  end
+
 end
