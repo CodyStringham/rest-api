@@ -3,7 +3,7 @@
 FactoryGirl.define do
   factory :dream do |d|
     d.date { "#{Time.now}" }
-    d.category { "#{['Fantasy', 'Psychic', 'Nightmare'].sample}" }
+    d.category { "#{Faker::Name.first_name}" }
     d.description { "#{Faker::Lorem.phrase}" }
     d.user { nil }
   end

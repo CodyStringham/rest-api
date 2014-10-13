@@ -5,7 +5,7 @@ class Api::V1::BaseController < Api::BaseController
     set_resource(resource_class.new(resource_params))
 
     if get_resource.save
-      render :show, status: :created
+      render :show, status: :created, location: api_v1_user_url(get_resource.id)
     else
       render json: get_resource.errors, status: :unprocessable_entity
     end
