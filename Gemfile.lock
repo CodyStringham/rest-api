@@ -60,6 +60,19 @@ GEM
     diff-lcs (1.2.5)
     diffy (3.0.6)
     docile (1.1.5)
+    elasticsearch (1.0.5)
+      elasticsearch-api (= 1.0.5)
+      elasticsearch-transport (= 1.0.5)
+    elasticsearch-api (1.0.5)
+      multi_json
+    elasticsearch-model (0.1.6)
+      activesupport (> 3)
+      elasticsearch (> 0.4)
+      hashie
+    elasticsearch-rails (0.1.6)
+    elasticsearch-transport (1.0.5)
+      faraday
+      multi_json
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
@@ -71,6 +84,8 @@ GEM
     factory_girl_rails (4.4.1)
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
+    faraday (0.9.0)
+      multipart-post (>= 1.2, < 3)
     ffaker (1.25.0)
     ffi (1.9.5)
     formatador (0.2.5)
@@ -98,6 +113,7 @@ GEM
       guard (~> 2.0)
     haml (4.1.0.beta.1)
       tilt
+    hashie (3.3.1)
     hike (1.2.3)
     hirb (0.7.2)
     hitimes (1.2.2)
@@ -148,6 +164,7 @@ GEM
     minitest (5.4.2)
     multi_json (1.10.1)
     multi_xml (0.5.5)
+    multipart-post (2.0.0)
     oj (2.10.3)
     pg (0.17.1)
     polyglot (0.3.5)
@@ -362,6 +379,8 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   coffee-rails (~> 4.0.0)
+  elasticsearch-model
+  elasticsearch-rails
   factory_girl_rails
   ffaker
   guard

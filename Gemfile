@@ -15,6 +15,8 @@ gem 'oj'        # JSON parser
 gem 'httparty'  # Makes http requests incredibly easy
 
 gem 'kaminari'  # adds pagination to ActiveModels
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
