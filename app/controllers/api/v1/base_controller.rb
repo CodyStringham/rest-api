@@ -1,22 +1,6 @@
 class Api::V1::BaseController < Api::BaseController
   before_action :set_resource, only: [:destroy, :show, :update]
 
-  def create
-    set_resource(resource_class.new(resource_params))
-
-    if get_resource.save
-      render :show, status: :created, location: api_v1_user_url(get_resource.id)
-    else
-      render json: get_resource.errors, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /api/v1/{plural_resource_name}/1
-  def destroy
-    get_resource.destroy
-    head :no_content
-  end
-
   # GET /api/v1/{plural_resource_name}
   def index
     plural_resource_name = "@#{resource_name.pluralize}"
@@ -33,6 +17,16 @@ class Api::V1::BaseController < Api::BaseController
     respond_with get_resource
   end
 
+  def create
+    set_resource(resource_class.new(resource_params))
+
+    if get_resource.save
+      render :show, status: :created, location: get_resource
+    else
+      render json: get_resource.errors, status: :unprocessable_entity
+    end
+  end
+
   # PATCH/PUT /api/v1/{plural_resource_name}/1
   def update
     if get_resource.update(resource_params)
@@ -40,6 +34,12 @@ class Api::V1::BaseController < Api::BaseController
     else
       render json: get_resource.errors, status: :unprocessable_entity
     end
+  end
+
+  # DELETE /api/v1/{plural_resource_name}/1
+  def destroy
+    get_resource.destroy
+    head :no_content
   end
 
   private

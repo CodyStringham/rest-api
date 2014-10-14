@@ -3,8 +3,10 @@ require 'test_helper'
 class ListingUsersTest < ActionDispatch::IntegrationTest
   setup do
     host! 'api.example.com' #required for testing with a subdomain constraint
-    @dream1 = create(:dream)
-    @dream2 = create(:dream)
+    @user = create(:user)
+    @user2 = create(:user)
+    @dream1 = create(:dream, user_id: @user.id)
+    @dream2 = create(:dream, user_id: @user2.id)
   end
 
   test 'should return a list of dreams' do
@@ -13,14 +15,14 @@ class ListingUsersTest < ActionDispatch::IntegrationTest
     refute_empty response.body
   end
 
-  test 'should return dreams filtered by category' do
-    get "/v1/dreams.json?category=#{@dream1.category}"
+  test 'should return dreams filtered by user_id' do
+    get "/v1/dreams.json?user_id=#{@dream1.user_id}"
     assert_response :success
 
     data = JSON.parse(response.body)
-    categories = data['dreams'].collect { |u| u['category'] }
-    assert_includes categories, @dream1.category
-    refute_includes categories, @dream2.category
+    users = data['dreams'].collect { |u| u['user_id'] }
+    assert_includes users, @dream1.user_id
+    refute_includes users, @dream2.user_id
   end
 
   test 'should return a dream by id' do
