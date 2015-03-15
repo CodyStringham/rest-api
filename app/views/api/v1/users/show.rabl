@@ -22,9 +22,3 @@ child :dreams do
     links
   end
 end
-
-# node :links do |user|
-#   links = {}
-
-#   links
-# end
