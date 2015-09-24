@@ -3,6 +3,16 @@ rest-api
 
 Welcome to my API homework app. Built upon this amazing [RESTful API blog post](https://codelation.com/blog/rails-restful-api-just-add-water). This API is versioned and set up with json:api standards using rabl.
 
+I've been getting a couple questions about how to get this setup and running, below are some dependancies you'll need:
+
+#### Subdomained and Versioned
+The version isn't a big deal, just prefix your requests with `/v1/`, but the subdomain can be tricky for beginners. You'll need to run a service like [Pow](pow.cx) to use subdomains in development. You can pair this with the ruby gem [Powder](https://github.com/Rodreegez/powder) for some really awesome times :)
+
+After you have these set up, you can successfully go to a url like `api.rest-api.dev/v1/dreams`
+
+#### Tests!
+There are also some really basic api tests written from codeschools rest api course, try them out with `rake test`
+
 What's inside of the app
 --------
 ####Models
