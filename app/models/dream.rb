@@ -14,6 +14,33 @@ class Dream < ActiveRecord::Base
 end
 
 
-#'{"query": {"match": {"category": "Nightmare"}}}'
+# '{
+#   "query": {
+#     "match": {
+#       "category": "Nightmare"
+#     }
+#   }
+# }'
+# '{"query": {"match": {"category": "Nightmare"} } }'
 
-#'{"query":{"bool":{"must": { "match": { "category": "Nightmare" }},"should": { "match": { "description": "molestiae" }}}}}'
+# '{
+#   "query": {
+#     "bool": {
+#       "must": {
+#         "match": {
+#           "category": "Nightmare"
+#         }
+#       },
+#       "should": {
+#         "match": {
+#           "description": "molestiae"
+#         }
+#       }
+#     }
+#   }
+# }'
+# '{"query": {"bool": {"must": {"match": {"category": "Nightmare"} }, "should": {"match": {"description": "molestiae"} } } } }'
+
+
+
+
