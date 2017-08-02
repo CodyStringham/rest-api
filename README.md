@@ -15,25 +15,25 @@ There are also some really basic api tests written from codeschools rest api cou
 
 What's inside of the app
 --------
-####Models
+#### Models
 ```ruby
 User :name, :age, :city, :state
 Dream :date, :category, :description, :user_id
 ```
 
-####Views
+#### Views
 `views/api/v1/dreams` & `views/api/v1/users` contain a index and show
 
-####Controllers
+#### Controllers
 `controllers/api/v1/base_controller` contains the most logic, see private method comments. These will set and get the resource names as needed for each controller.
 
-####Kaminari Pagination
+#### Kaminari Pagination
 Kaminari has a default page size of 25, to override this pass in a `page` and/or a `page_size` paramater like the following:
 ```
 http://api.rest-api.dev/v1/dreams.json?page=1&page_size=10
 ```
 
-####Built in query params
+#### Built in query params
 Each controller has permitted query params, by default they are all allowed:
 ```
 http://api.rest-api.dev/v1/dreams.json?user_id=5&category=Nightmare
